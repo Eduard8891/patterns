@@ -1,0 +1,17 @@
+package facade;
+
+class Facade {
+    private final SubSystem1 subsystem1;
+    private final SubSystem2 subsystem2;
+
+    public Facade() {
+        this.subsystem1 = new SubSystem1();
+        this.subsystem2 = new SubSystem2();
+    }
+
+    public void operation() {
+        System.out.println("Facade: Operation");
+        subsystem1.operation1();
+        subsystem2.operation2();
+    }
+}
