@@ -3,16 +3,12 @@ package state;
 public class Main {
 
     public static void main(String[] args) {
-        DocumentContext d = new DocumentContext();
-        d.setiDocumentState(new DocumentNew());
-        System.out.println(d.getStatusName());
-        d.nextDocumStatus();
-        System.out.println(d.getStatusName());
-        d.nextDocumStatus();
-        System.out.println(d.getStatusName());
-        d.nextDocumStatus();
-        System.out.println(d.getStatusName());
-
+        Human human = new Human();
+        human.run();
+        human.setStage(Stage.CHILD);
+        human.run();
+        human.setStage(Stage.ADULT);
+        human.run();
     }
 
 }

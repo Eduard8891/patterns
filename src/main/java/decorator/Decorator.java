@@ -1,6 +1,6 @@
 package decorator;
 
-public abstract class Decorator implements Component{
+public abstract class Decorator implements Component {
     Component component;
 
     public Decorator(Component component) {
@@ -8,7 +8,7 @@ public abstract class Decorator implements Component{
     }
 
     @Override
-    public void method() {
-        component.method();
+    public void use() {
+        component.use();
     }
 }

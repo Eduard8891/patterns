@@ -2,20 +2,20 @@ package chainofresponsibility;
 
 public class Main {
     public static void main(String[] args) {
-        MessageSender reportMessageSender = new LogReportMessageSender(PriorityLevel.LOW);
-        MessageSender emailMessageSender = new EmailMessageSender(PriorityLevel.MIDDLE);
-        MessageSender smsMessageSender = new SMSMessageSender(PriorityLevel.HIGH);
+        CarSelector ladaSelector = new LadaSelector(ClassAuto.LOW);
+        CarSelector renaultSelector = new RenaultSelector(ClassAuto.MIDDLE);
+        CarSelector bMWSelector = new BMWSelector(ClassAuto.HIGH);
 
-        reportMessageSender.setNextMessageSender(emailMessageSender);
-        emailMessageSender.setNextMessageSender(smsMessageSender);
+        ladaSelector.setNextCarSelector(renaultSelector);
+        bMWSelector.setNextCarSelector(bMWSelector);
 
-        reportMessageSender.messageSenderManager("Something is happening!", PriorityLevel.LOW);
-
-        System.out.println("---------------------------------------------------------------------");
-        reportMessageSender.messageSenderManager("Something went wrong!", PriorityLevel.MIDDLE);
+        ladaSelector.carSelectorManager("Lada!", ClassAuto.LOW);
 
         System.out.println("---------------------------------------------------------------------");
-        reportMessageSender.messageSenderManager("We had a problem!", PriorityLevel.HIGH);
+        renaultSelector.carSelectorManager("Renault!", ClassAuto.MIDDLE);
+
+        System.out.println("---------------------------------------------------------------------");
+        bMWSelector.carSelectorManager("BMW!", ClassAuto.HIGH);
 
     }
 }

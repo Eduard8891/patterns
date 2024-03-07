@@ -2,8 +2,8 @@ package decorator;
 
 public class Main {
     public static void main(String[] args) {
-        Component component = new ComponentClass();
-        Component decorator = new DecoratorClass(component);
-        decorator.method();
+        Component component = new HeadlightsBulbs();
+        Component decorator = new Headlights(component);
+        decorator.use();
     }
 }

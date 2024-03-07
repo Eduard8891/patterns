@@ -1,9 +1,9 @@
 package command;
 
 public class TurnOffLightCommand implements Command {
-    private Light theLight;
+    private HeadLights theLight;
 
-    public TurnOffLightCommand(Light light) {
+    public TurnOffLightCommand(HeadLights light) {
         this.theLight = light;
     }
 

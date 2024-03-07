@@ -1,5 +1,5 @@
 package chainofresponsibility;
 
-public enum PriorityLevel {
+public enum ClassAuto {
     LOW, MIDDLE, HIGH
 }

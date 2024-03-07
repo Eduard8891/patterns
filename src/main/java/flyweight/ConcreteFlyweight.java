@@ -1,14 +1,14 @@
 package flyweight;
 
 class ConcreteFlyweight implements Flyweight {
-    private final String intrinsicState;
+    private final String name;
 
-    public ConcreteFlyweight(String intrinsicState) {
-        this.intrinsicState = intrinsicState;
+    public ConcreteFlyweight(String name) {
+        this.name = name;
     }
 
     @Override
     public void operation() {
-        System.out.println("ConcreteFlyweight: " + intrinsicState);
+        System.out.println("ConcreteFlyweight: " + name);
     }
 }

@@ -16,6 +16,6 @@ abstract class AbstractThreeRowsFlag {
     }
 
     private void drawFlagpole() {
-        System.out.println("Флагшток нарисован");
+        System.out.println("Flagpole drawn");
     }
 }

@@ -2,17 +2,16 @@ package composite;
 
 public class Main {
     public static void main(String[] args) {
-        // Вычислим выражение - 20 - (5-2) - (11+6)
-        // Приведем к следующему виду 20 - a - b
-        SubExpression expr = new Expression();
+        AutoComponent car = new Car();
+        AutoComponent carSalon = new CarSalon();
+        AutoComponent mirror = new Mirror();
+        AutoComponent seat = new Seat();
+        car.add(carSalon);
+        carSalon.add(mirror);
+        carSalon.add(seat);
 
-        SubExpression a = new Expression(new IntegerValue(5), new IntegerValue(-2));
-        SubExpression b = new Expression(new IntegerValue(11), new IntegerValue(6));
-
-        expr.add(new IntegerValue(20));
-        expr.sub(a);
-        expr.sub(b);
-
-        System.out.println(expr.value());
+        car.getAll().forEach(AutoComponent::print);
+        System.out.println("--------------------");
+        car.getAll().get(0).getAll().forEach(AutoComponent::print);
     }
 }
